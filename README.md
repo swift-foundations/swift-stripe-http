@@ -48,6 +48,17 @@ dependencies: [
 ]
 ```
 
+Add the product to your target:
+
+```swift
+.target(
+    name: "YourTarget",
+    dependencies: [
+        .product(name: "Stripe Live", package: "swift-stripe-live")
+    ]
+)
+```
+
 ## Quick Start
 
 ### Configuration
