@@ -301,6 +301,28 @@ let package = Package(
         .package(url: "https://github.com/swift-foundations/swift-clocks-dependencies.git", branch: "main"),
     ],
     targets: [
+        // MARK: - Unreferenced Sources/ directories, deliberately retained
+        //
+        // Seven directories under Sources/ are claimed by no target here and
+        // remain unreferenced pending their reviewed semantic routing:
+        //
+        //   Stripe Core Resources Live            Stripe Products Tax Rate Live
+        //   Stripe Products Coupons Live          Stripe Sigma Scheduled Queries Live
+        //   Stripe Products Promotion Code Live   Stripe Tax Calculations Live
+        //   Stripe Products Shipping Rates Live
+        //
+        // They are NOT implementations awaiting wiring. Each imports a Types
+        // module that exists nowhere in swift-stripe-types — no product, no
+        // target, no directory. swift-stripe-types shipped one module per API
+        // AREA (Products, Sigma, Tax); these were written against one per
+        // RESOURCE (Products Coupons, Sigma Scheduled Queries, Tax Calculations,
+        // …) that was never built. Wiring them means building seven missing
+        // Types modules, which presumes a fine-grained decomposition this
+        // project did not adopt — a scoping decision for this package's owner.
+        //
+        // Retained rather than deleted because that reason is the finding, and
+        // it is not visible from reading the files. See the commit that added
+        // this note for the full measurement and its controls.
         .target(
             name: .stripeLiveShared,
             dependencies: [
