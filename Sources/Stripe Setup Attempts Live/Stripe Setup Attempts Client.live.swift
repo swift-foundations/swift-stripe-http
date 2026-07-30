@@ -31,7 +31,7 @@ extension Stripe.Setup.Attempts {
 
 extension Stripe.Setup.Attempts: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Setup.Attempts.Authenticated {
-        try! Stripe.Setup.Attempts.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Setup.Attempts.Authenticated = liveValue
 }

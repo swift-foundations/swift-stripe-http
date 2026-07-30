@@ -32,7 +32,7 @@ extension Stripe {
 
 extension Stripe.ConfirmationTokenClient: @retroactive Dependency.Key {
     public static var liveValue: Stripe.ConfirmationTokenAuthenticated {
-        try! Stripe.ConfirmationTokenAuthenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.ConfirmationTokenAuthenticated = liveValue
 }

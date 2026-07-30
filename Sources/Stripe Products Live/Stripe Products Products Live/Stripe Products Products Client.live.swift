@@ -78,7 +78,7 @@ extension Stripe.Products.Products: @retroactive @unchecked Sendable {}
 
 extension Stripe.Products.Products: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Products.Products.Authenticated {
-        try! Stripe.Products.Products.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Products.Products.Authenticated = liveValue
 }

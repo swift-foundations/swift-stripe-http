@@ -63,7 +63,7 @@ extension Stripe.Customers.Cards {
 
 extension Stripe.Customers.Cards: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Customers.Cards.Authenticated {
-        try! Stripe.Customers.Cards.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Customers.Cards.Authenticated = liveValue
 }

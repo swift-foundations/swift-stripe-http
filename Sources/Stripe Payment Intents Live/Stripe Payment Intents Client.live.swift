@@ -104,7 +104,7 @@ extension Stripe.PaymentIntents {
 
 extension Stripe.PaymentIntents: @retroactive Dependency.Key {
     public static var liveValue: Stripe.PaymentIntents.Authenticated {
-        try! Stripe.PaymentIntents.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.PaymentIntents.Authenticated = liveValue
 }

@@ -61,7 +61,7 @@ extension Stripe.Charges {
 
 extension Stripe.Charges: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Charges.Authenticated {
-        try! Stripe.Charges.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Charges.Authenticated = liveValue
 }

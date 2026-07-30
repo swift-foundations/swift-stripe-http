@@ -26,7 +26,7 @@ extension Stripe.Checkout {
 
 extension Stripe.Checkout: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Checkout.Authenticated {
-        try! Stripe.Checkout.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Checkout.Authenticated = liveValue
 }

@@ -90,6 +90,29 @@ extension Authenticated where APIRouter: Dependency.Key, APIRouter.Value == APIR
     }
 }
 
+extension Authenticated where APIRouter: Dependency.Key, APIRouter.Value == APIRouter {
+    /// The `Dependency.Key.liveValue` composition for a Stripe `Authenticated` wrapper.
+    ///
+    /// `Dependency.Key.liveValue` is a non-throwing static property requirement and
+    /// `Authentication.Client` exposes no degraded value, so a Stripe misconfiguration —
+    /// `STRIPE_SECRET_KEY` unset, or an unusable base URL — can only terminate the
+    /// process. This is the ONE place in the package where that happens; every
+    /// `liveValue` in every `*Live` target composes through here.
+    package static func liveValue(
+        _ buildClient:
+            @escaping @Sendable (
+                _ makeRequest: @escaping @Sendable (_ route: API) throws -> URLRequest
+            ) -> Consumer
+    ) -> Self where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
+        // REASON: `Dependency.Key.liveValue` is a non-throwing requirement and
+        // `Authentication.Client` has no failure-carrying form, so a Stripe
+        // credential or base-URL misconfiguration cannot be reported as an error
+        // at this boundary. Sole authorized `try!` in the package.
+        // swiftlint:disable:next force_try
+        try! Self(buildClient)
+    }
+}
+
 public struct StripeAuthRouter: Sendable {
     public init() {}
 }

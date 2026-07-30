@@ -37,7 +37,7 @@ extension Stripe.Events {
 
 extension Stripe.Events: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Events.Authenticated {
-        try! Stripe.Events.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Events.Authenticated = liveValue
 }

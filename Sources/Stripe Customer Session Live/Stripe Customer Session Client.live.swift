@@ -30,7 +30,7 @@ extension Stripe.Customers.Customer.Sessions {
 
 extension Stripe.Customers.Customer.Sessions: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Customers.Customer.Sessions.Authenticated {
-        try! Stripe.Customers.Customer.Sessions.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Customers.Customer.Sessions.Authenticated = liveValue
 }

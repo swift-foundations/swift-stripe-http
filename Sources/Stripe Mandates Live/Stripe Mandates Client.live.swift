@@ -31,7 +31,7 @@ extension Stripe.Mandates {
 
 extension Stripe.Mandates: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Mandates.Authenticated {
-        try! Stripe.Mandates.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Mandates.Authenticated = liveValue
 }

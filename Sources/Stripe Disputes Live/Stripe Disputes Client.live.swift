@@ -49,7 +49,7 @@ extension Stripe.Disputes {
 
 extension Stripe.Disputes: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Disputes.Authenticated {
-        try! Stripe.Disputes.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Disputes.Authenticated = liveValue
 }

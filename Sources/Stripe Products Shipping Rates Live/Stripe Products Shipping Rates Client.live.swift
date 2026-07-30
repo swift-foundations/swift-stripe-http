@@ -59,7 +59,7 @@ extension Stripe.Products.ShippingRates {
 
 extension Stripe.Products.ShippingRates: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Products.ShippingRates.Authenticated {
-        try! Stripe.Products.ShippingRates.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Products.ShippingRates.Authenticated = liveValue
 }

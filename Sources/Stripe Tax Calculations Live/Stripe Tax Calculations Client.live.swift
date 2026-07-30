@@ -51,7 +51,7 @@ extension Stripe.Tax.Calculations {
 
 extension Stripe.Tax.Calculations: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Tax.Calculations.Authenticated {
-        try! Stripe.Tax.Calculations.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Tax.Calculations.Authenticated = liveValue
 }

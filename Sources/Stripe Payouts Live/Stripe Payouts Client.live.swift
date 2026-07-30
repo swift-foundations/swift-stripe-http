@@ -61,7 +61,7 @@ extension Stripe.Payouts {
 
 extension Stripe.Payouts: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Payouts.Authenticated {
-        try! Stripe.Payouts.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Payouts.Authenticated = liveValue
 }

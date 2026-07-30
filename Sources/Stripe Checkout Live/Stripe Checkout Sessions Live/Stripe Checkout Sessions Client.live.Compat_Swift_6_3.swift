@@ -26,6 +26,10 @@ import Stripe_Checkout_Types
 import Stripe_Live_Shared
 
 extension Stripe.Checkout.Sessions.Client {
+    // REASON: lowercase-initial mirror of the `Compat_Swift_6_3` namespace and the §A9
+    // retirement grep token; renaming would break the cross-repository sweep that retires
+    // this path at the 6.4 flip. RETIRES-OR-REDISPOSES AT THE 6.4 FLIP.
+    // swift-format-ignore: AlwaysUseLowerCamelCase
     /// 6.3.x-compat (§A9) live client — `create` only.
     ///
     /// Identical to ``live(makeRequest:)`` in every respect except the request-maker.
@@ -48,12 +52,20 @@ extension Stripe.Checkout.Sessions.Client {
 }
 
 extension Stripe.Checkout.Sessions {
+    // REASON: lowercase-initial mirror of the `Compat_Swift_6_3` namespace and the §A9
+    // retirement grep token; renaming would break the cross-repository sweep that retires
+    // this path at the 6.4 flip. RETIRES-OR-REDISPOSES AT THE 6.4 FLIP.
+    // swift-format-ignore: AlwaysUseLowerCamelCase
     /// 6.3.x-compat (§A9) `Authenticated` value — register this in the composition root
     /// in place of ``liveValue`` while on a 6.3.x toolchain.
     ///
     /// - Warning: 6.3.x-compat path, §A9-class. RETIRES-OR-REDISPOSES AT THE 6.4 FLIP.
-    public static var compat_Swift_6_3: Stripe.Checkout.Sessions.Authenticated {
-        // The supplied router-based `makeRequest` is deliberately DISCARDED (`_`).
-        try! Stripe.Checkout.Sessions.Authenticated { _ in try! .compat_Swift_6_3() }
+    public static func compat_Swift_6_3() throws -> Stripe.Checkout.Sessions.Authenticated {
+        // Build the compat client BEFORE composing the wrapper, so a configuration
+        // failure is thrown rather than trapped. The supplied router-based
+        // `makeRequest` is still deliberately DISCARDED (`_`) — calling it is
+        // exactly what crashes on 6.3.x.
+        let client = try Stripe.Checkout.Sessions.Client.compat_Swift_6_3()
+        return try Stripe.Checkout.Sessions.Authenticated { _ in client }
     }
 }

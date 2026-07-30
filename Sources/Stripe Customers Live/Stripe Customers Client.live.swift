@@ -76,7 +76,7 @@ extension Stripe.Customers {
 
 extension Stripe.Customers: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Customers.Authenticated {
-        try! Stripe.Customers.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Customers.Authenticated = liveValue
 }

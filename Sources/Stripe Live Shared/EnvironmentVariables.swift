@@ -62,6 +62,11 @@ extension EnvironmentVariables {
 extension EnvVars {
     package static var development: Self {
         @Dependency(\.projectRoot) var projectRoot
+        // REASON: consumed only as a Swift Testing trait argument
+        // (`.dependency(\.envVars, .development)`), an attribute-position expression where
+        // `try` cannot appear; a missing developer environment file is an unrecoverable
+        // local setup error in test-only code.
+        // swiftlint:disable:next force_try
         return try! .live(
             environmentConfiguration: .projectRoot(projectRoot, environment: "development")
         )

@@ -71,7 +71,7 @@ extension Stripe.Checkout.Sessions: @retroactive @unchecked Sendable {}
 
 extension Stripe.Checkout.Sessions: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Checkout.Sessions.Authenticated {
-        try! Stripe.Checkout.Sessions.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Checkout.Sessions.Authenticated = liveValue
 }

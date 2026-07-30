@@ -100,7 +100,7 @@ extension Stripe.Billing.Invoices: @retroactive @unchecked Sendable {}
 
 extension Stripe.Billing.Invoices: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Billing.Invoices.Authenticated {
-        try! Stripe.Billing.Invoices.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Billing.Invoices.Authenticated = liveValue
 }

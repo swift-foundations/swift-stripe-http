@@ -76,7 +76,7 @@ extension Stripe.Billing.Subscription.Schedule {
 
 extension Stripe.Billing.Subscription.Schedule: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Billing.Subscription.Schedule.Authenticated {
-        try! Stripe.Billing.Subscription.Schedule.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Billing.Subscription.Schedule.Authenticated = liveValue
 }

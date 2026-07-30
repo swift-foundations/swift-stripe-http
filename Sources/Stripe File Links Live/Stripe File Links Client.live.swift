@@ -49,7 +49,7 @@ extension Stripe.FileLinks {
 
 extension Stripe.FileLinks: @retroactive Dependency.Key {
     public static var liveValue: Stripe.FileLinks.Authenticated {
-        try! Stripe.FileLinks.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.FileLinks.Authenticated = liveValue
 }

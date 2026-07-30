@@ -32,7 +32,7 @@ extension Stripe.Billing {
 
 extension Stripe.Billing: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Billing.Authenticated {
-        try! Stripe.Billing.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Billing.Authenticated = liveValue
 }

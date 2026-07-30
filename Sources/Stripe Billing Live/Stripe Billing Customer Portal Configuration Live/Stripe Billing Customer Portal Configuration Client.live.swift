@@ -52,7 +52,7 @@ extension Stripe.Billing.Customer.Portal.Configuration {
 
 extension Stripe.Billing.Customer.Portal.Configuration: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Billing.Customer.Portal.Configuration.Authenticated {
-        try! Stripe.Billing.Customer.Portal.Configuration.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Billing.Customer.Portal.Configuration.Authenticated =
         liveValue

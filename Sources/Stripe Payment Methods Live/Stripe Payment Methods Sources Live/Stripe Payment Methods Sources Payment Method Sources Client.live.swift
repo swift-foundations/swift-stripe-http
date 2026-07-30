@@ -66,7 +66,7 @@ extension Stripe.PaymentMethods.Sources {
 
 extension Stripe.PaymentMethods.Sources: @retroactive Dependency.Key {
     public static var liveValue: Stripe.PaymentMethods.Sources.Authenticated {
-        try! Stripe.PaymentMethods.Sources.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.PaymentMethods.Sources.Authenticated = liveValue
 }

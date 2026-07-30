@@ -38,7 +38,7 @@ extension Stripe.Products.Discounts {
 
 extension Stripe.Products.Discounts: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Products.Discounts.Authenticated {
-        try! Stripe.Products.Discounts.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Products.Discounts.Authenticated = liveValue
 }

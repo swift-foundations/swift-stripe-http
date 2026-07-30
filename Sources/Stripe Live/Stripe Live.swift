@@ -90,7 +90,7 @@ extension Stripe {
 
 extension Stripe: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Authenticated {
-        try! Stripe.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Authenticated = liveValue
 }

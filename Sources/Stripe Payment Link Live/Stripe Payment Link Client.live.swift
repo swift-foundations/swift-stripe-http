@@ -57,7 +57,7 @@ extension Stripe.PaymentLinks {
 
 extension Stripe.PaymentLinks: @retroactive Dependency.Key {
     public static var liveValue: Stripe.PaymentLinks.Authenticated {
-        try! Stripe.PaymentLinks.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.PaymentLinks.Authenticated = liveValue
 }

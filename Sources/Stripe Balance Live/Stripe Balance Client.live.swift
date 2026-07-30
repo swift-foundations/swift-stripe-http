@@ -31,7 +31,7 @@ extension Stripe.Balance {
 
 extension Stripe.Balance: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Balance.Authenticated {
-        try! Stripe.Balance.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Balance.Authenticated = liveValue
 }

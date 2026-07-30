@@ -67,7 +67,7 @@ extension Stripe.Setup.Intents {
 
 extension Stripe.Setup.Intents: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Setup.Intents.Authenticated {
-        try! Stripe.Setup.Intents.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Setup.Intents.Authenticated = liveValue
 }

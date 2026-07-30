@@ -37,7 +37,7 @@ extension Stripe.Tokens {
 
 extension Stripe.Tokens: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Tokens.Authenticated {
-        try! Stripe.Tokens.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Tokens.Authenticated = liveValue
 }

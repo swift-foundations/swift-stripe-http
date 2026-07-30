@@ -80,7 +80,7 @@ extension Stripe.Customers.BankAccounts {
 
 extension Stripe.Customers.BankAccounts: @retroactive Dependency.Key {
     public static var liveValue: Stripe.Customers.BankAccounts.Authenticated {
-        try! Stripe.Customers.BankAccounts.Authenticated { .live(makeRequest: $0) }
+        .liveValue { .live(makeRequest: $0) }
     }
     public static let testValue: Stripe.Customers.BankAccounts.Authenticated = liveValue
 }
