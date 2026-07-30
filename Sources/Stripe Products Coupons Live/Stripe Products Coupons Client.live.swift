@@ -63,14 +63,10 @@ extension Stripe.Products.Coupons {
     >
 }
 
-extension Stripe.Products.Coupons: @retroactive Dependency.Key {
-    public static var liveValue: Stripe.Products.Coupons.Authenticated {
-        .liveValue { .live(makeRequest: $0) }
-    }
-    public static let testValue: Stripe.Products.Coupons.Authenticated = liveValue
-}
-
-extension Stripe.Products.Coupons.API.Router: @retroactive Dependency.Key {
-    public static let liveValue: Self = .init()
-    public static let testValue: Self = .init()
-}
+// The `Dependency.Key` conformances for `Stripe.Products.Coupons` and
+// `Stripe.Products.Coupons.API.Router` are NOT declared here — this directory is
+// unreferenced by any target (see the Package.swift note at the top of `targets:`)
+// and `Stripe.Products.Coupons` is also composed by the wired
+// `Stripe Products Live/Stripe Products Coupons Live` sources under the
+// `Stripe Products Live` target. Declaring both was a duplicate `@retroactive`
+// conformance on the same type; the wired target is the sole owner (issue #15).
