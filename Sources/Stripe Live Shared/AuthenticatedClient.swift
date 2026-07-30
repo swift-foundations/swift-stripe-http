@@ -25,27 +25,26 @@ extension Authenticated where APIRouter: Sendable {
         router: APIRouter,
         buildClient:
             @escaping @Sendable (@escaping @Sendable (API) throws -> URLRequest) -> Consumer
-    ) throws where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
+    ) throws(AuthenticatedClient.Error)
+    where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
         @Dependency(\.envVars.stripe.baseUrl) var baseUrl
         @Dependency(\.envVars.stripe.secretKey) var secretKey
 
         guard let secretKey else {
-            throw NSError(
-                domain: "StripeAuth",
-                code: 1,
-                userInfo: [
-                    NSLocalizedDescriptionKey: "STRIPE_SECRET_KEY environment variable not set"
-                ]
-            )
+            throw .missingSecretKey
         }
 
-        self = try .init(
-            baseURL: baseUrl,
-            credential: .init(token: secretKey.rawValue),
-            apiRouter: router,
-            credentialRouter: .init(),
-            client: buildClient
-        )
+        do throws(Authentication.Error<StripeAuthRouter.Failure>) {
+            self = try .init(
+                baseURL: baseUrl,
+                credential: .init(token: secretKey.rawValue),
+                apiRouter: router,
+                credentialRouter: .init(),
+                client: buildClient
+            )
+        } catch {
+            throw .composition(error)
+        }
     }
 }
 
@@ -56,7 +55,8 @@ extension Authenticated where APIRouter: Sendable {
             @escaping @Sendable (
                 _ makeRequest: @escaping @Sendable (_ route: API) throws -> URLRequest
             ) -> Consumer
-    ) throws -> Self where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
+    ) throws(AuthenticatedClient.Error) -> Self
+    where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
         try .init(
             router: router,
             buildClient: { buildClient($0) }
@@ -67,7 +67,8 @@ extension Authenticated where APIRouter: Sendable {
 extension Authenticated where APIRouter: Dependency.Key, APIRouter.Value == APIRouter {
     package init(
         buildClient: @escaping @Sendable () -> Consumer
-    ) throws where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
+    ) throws(AuthenticatedClient.Error)
+    where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
         @Dependency(APIRouter.self) var router
         self = try .fromEnvironmentVariables(
             router: router
@@ -81,7 +82,8 @@ extension Authenticated where APIRouter: Dependency.Key, APIRouter.Value == APIR
             @escaping @Sendable (
                 _ makeRequest: @escaping @Sendable (_ route: API) throws -> URLRequest
             ) -> Consumer
-    ) throws where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
+    ) throws(AuthenticatedClient.Error)
+    where Credential == RFC_6750.Bearer, CredentialRouter == StripeAuthRouter {
         @Dependency(APIRouter.self) var router
         self = try .fromEnvironmentVariables(
             router: router,
