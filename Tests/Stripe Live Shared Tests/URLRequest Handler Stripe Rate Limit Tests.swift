@@ -8,12 +8,12 @@
 import Clocks_Dependencies
 import Dependencies
 import Dependencies_Test_Support
-import Foundation
-import URLRequestHandler
 import Environment_Dependencies
-import Throttling_Dependencies
+import Foundation
 import Stripe_Live_Shared
 import Testing
+import Throttling_Dependencies
+import URLRequestHandler
 
 // Actor to track test state safely
 actor TestTracker {
@@ -63,7 +63,7 @@ struct Test {
                     httpVersion: nil,
                     headerFields: nil
                 )!
-                let data = "{\"id\": \"test_123\"}".data(using: .utf8)!
+                let data = Data("{\"id\": \"test_123\"}".utf8)
                 return (data, response)
             }
         } operation: {
@@ -122,7 +122,7 @@ struct Test {
                     httpVersion: nil,
                     headerFields: nil
                 )!
-                let data = "{\"success\": true}".data(using: .utf8)!
+                let data = Data("{\"success\": true}".utf8)
                 return (data, response)
             }
         } operation: {

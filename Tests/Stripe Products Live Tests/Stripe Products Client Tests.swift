@@ -1,17 +1,17 @@
-//import Dependencies
-//import Dependencies_Test_Support
-//import EnvironmentVariables
-//import Foundation
-//import IssueReporting
-//import Stripe_Products_Live
-//@testable import Products_Products
-////import Stripe_Live_Shared
-//import Testing
+// import Dependencies
+// import Dependencies_Test_Support
+// import EnvironmentVariables
+// import Foundation
+// import IssueReporting
+// import Stripe_Products_Live
+// @testable import Products_Products
+//// import Stripe_Live_Shared
+// import Testing
 //
-//@Suite(
+// @Suite(
 //    "Product Client Tests",
 //    .dependency(\.envVars, .liveTest),
 //    .dependency(AuthenticatedClient.testValue)
-//)
-//struct ProductClientTests {
-//}
+// )
+// struct ProductClientTests {
+// }

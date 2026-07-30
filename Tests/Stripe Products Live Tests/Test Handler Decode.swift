@@ -4,12 +4,12 @@
 //
 
 import Dependencies
-import Foundation
-import URLRequestHandler
 import Environment_Dependencies
-import Throttling_Dependencies
+import Foundation
 import Stripe_Products_Live
 import Testing
+import Throttling_Dependencies
+import URLRequestHandler
 
 @Test
 func `Test Handler Decode Product`() async throws {

@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 import Stripe_Customers_Types
 //
 //  Stripe Customers Cards Types Client.live.swift

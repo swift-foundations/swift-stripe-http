@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 //
 //  Stripe Products Shipping Rates Client.live.swift
 //  swift-stripe-live

@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 //
 //  Stripe Products Tax Rate Client.live.swift
 //  swift-stripe-live

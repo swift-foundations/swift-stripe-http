@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 import Stripe_Disputes_Types
 import Stripe_Live_Shared
 import Stripe_Types_Models

@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 //
 //  Stripe Payment Method Configurations Client.live.swift
 //  swift-stripe-live

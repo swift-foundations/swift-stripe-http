@@ -83,7 +83,9 @@ struct Test {
     }
 
     @Test
-    func `README Example: Subscription Management - Create Subscription (Lines 111-120)`() async throws {
+    func `README Example: Subscription Management - Create Subscription (Lines 111-120)`()
+        async throws
+    {
         // From README lines 111-120
         @Dependency(Stripe.Billing.Subscriptions.self) var subscriptionsClient
         @Dependency(Stripe.Customers.self) var customersClient
@@ -132,7 +134,9 @@ struct Test {
     }
 
     @Test
-    func `README Example: Subscription Management - Update Subscription (Lines 122-128)`() async throws {
+    func `README Example: Subscription Management - Update Subscription (Lines 122-128)`()
+        async throws
+    {
         // From README lines 122-128
         @Dependency(Stripe.Billing.Subscriptions.self) var subscriptionsClient
         @Dependency(Stripe.Customers.self) var customersClient
@@ -195,7 +199,9 @@ struct Test {
     }
 
     @Test
-    func `README Example: Subscription Management - Cancel Subscription (Lines 130-134)`() async throws {
+    func `README Example: Subscription Management - Cancel Subscription (Lines 130-134)`()
+        async throws
+    {
         // From README lines 130-134
         @Dependency(Stripe.Billing.Subscriptions.self) var subscriptionsClient
         @Dependency(Stripe.Customers.self) var customersClient

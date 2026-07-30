@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 //
 //  Stripe Products Promotion Code Client.live.swift
 //  swift-stripe-live

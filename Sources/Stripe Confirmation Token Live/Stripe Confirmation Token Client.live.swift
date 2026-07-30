@@ -1,12 +1,13 @@
-import Foundation
 import Dependencies
+import Foundation
 import Stripe_Confirmation_Token_Types
 import Stripe_Live_Shared
 import Stripe_Types_Models
 
 extension Stripe.ConfirmationTokenClient {
     public static func live(
-        makeRequest: @escaping @Sendable (_ route: Stripe.ConfirmationToken.API) throws -> URLRequest
+        makeRequest:
+            @escaping @Sendable (_ route: Stripe.ConfirmationToken.API) throws -> URLRequest
     ) -> Self {
         @Dependency(URLRequest.Handler.Stripe.self) var handleRequest
 

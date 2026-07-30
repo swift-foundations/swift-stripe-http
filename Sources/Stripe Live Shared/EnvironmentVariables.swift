@@ -6,9 +6,9 @@
 //
 
 import Dependencies
-import Foundation
 import EmailAddress
 import Environment_Dependencies
+import Foundation
 
 extension EnvironmentVariables {
 

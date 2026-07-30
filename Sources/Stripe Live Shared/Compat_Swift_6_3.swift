@@ -94,7 +94,8 @@ extension Compat_Swift_6_3 {
             case .invalidBaseURL(let url):
                 return "[6.3.x-compat / §A9] Stripe base URL is not valid request data: '\(url)'."
             case .credential(let reason):
-                return "[6.3.x-compat / §A9] STRIPE_SECRET_KEY is not a valid bearer token: \(reason)"
+                return
+                    "[6.3.x-compat / §A9] STRIPE_SECRET_KEY is not a valid bearer token: \(reason)"
             case .authorization(let reason):
                 return "[6.3.x-compat / §A9] Could not print the Authorization header: \(reason)"
             case .request(let reason):

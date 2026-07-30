@@ -5,8 +5,8 @@
 
 import Dependencies
 import Foundation
-import URL_Routing_Foundation_Integration
 import URLRouting
+import URL_Routing_Foundation_Integration
 
 public typealias Authenticated<
     API: Equatable & Sendable,

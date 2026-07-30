@@ -1,5 +1,5 @@
-import Foundation
 import Dependencies
+import Foundation
 import Stripe_Live_Shared
 import Stripe_Setup_Intents_Types
 import Stripe_Types_Models
