@@ -1,6 +1,6 @@
-# swift-stripe-live
+# swift-stripe-http
 
-[![CI](https://github.com/coenttb/swift-stripe-live/workflows/CI/badge.svg)](https://github.com/coenttb/swift-stripe-live/actions/workflows/ci.yml)
+[![CI](https://github.com/swift-foundations/swift-stripe-http/workflows/CI/badge.svg)](https://github.com/swift-foundations/swift-stripe-http/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
 Live HTTP client implementations for Stripe's REST API in Swift server applications.
@@ -27,7 +27,7 @@ Live HTTP client implementations for Stripe's REST API in Swift server applicati
 
 ## Overview
 
-`swift-stripe-live` provides HTTP client implementations for Stripe's REST API, built on async/await with dependency injection for testability. This package implements the client protocols defined in [swift-stripe-types](https://github.com/coenttb/swift-stripe-types) to make actual network requests to Stripe's servers.
+`swift-stripe-http` provides HTTP client implementations for Stripe's REST API, built on async/await with dependency injection for testability. This package implements the client protocols defined in [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard) to make actual network requests to Stripe's servers.
 
 ## Features
 
@@ -35,7 +35,7 @@ Live HTTP client implementations for Stripe's REST API in Swift server applicati
 - **Dependency injection**: Built with swift-dependencies for testability
 - **Authentication handling**: Automatic API key management and request signing
 - **Comprehensive coverage**: 48+ modules covering core payments, billing, subscriptions, Connect, Issuing, Terminal, and more
-- **Type-safe clients**: Implements protocols from swift-stripe-types for compile-time safety
+- **Type-safe clients**: Implements protocols from swift-stripe-standard for compile-time safety
 - **Production tested**: Powers live Stripe integrations in production applications
 
 ## Installation
@@ -44,7 +44,7 @@ Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/coenttb/swift-stripe-live", from: "0.2.1")
+    .package(url: "https://github.com/swift-foundations/swift-stripe-http", from: "0.2.1")
 ]
 ```
 
@@ -54,7 +54,7 @@ Add the product to your target:
 .target(
     name: "YourTarget",
     dependencies: [
-        .product(name: "Stripe Live", package: "swift-stripe-live")
+        .product(name: "Stripe Live", package: "swift-stripe-http")
     ]
 )
 ```
@@ -273,7 +273,7 @@ struct CustomerTests {
 
 ## Dependencies
 
-- [swift-stripe-types](https://github.com/coenttb/swift-stripe-types): Core type definitions and client protocols
+- [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard): Core type definitions and client protocols
 - [swift-server-foundation](https://github.com/coenttb/swift-server-foundation): Server utilities and HTTP handling
 - [swift-dependencies](https://github.com/pointfreeco/swift-dependencies): Dependency injection framework
 - [swift-authenticating](https://github.com/coenttb/swift-authenticating): Authentication utilities
@@ -286,11 +286,11 @@ struct CustomerTests {
 - [swift-authenticating](https://github.com/coenttb/swift-authenticating): A Swift package for type-safe HTTP authentication with URL routing integration.
 - [swift-environment-variables](https://github.com/coenttb/swift-environment-variables): A Swift package for type-safe environment variable management.
 - [swift-server-foundation](https://github.com/coenttb/swift-server-foundation): A Swift package with tools to simplify server development.
-- [swift-stripe-types](https://github.com/coenttb/swift-stripe-types): A Swift package with foundational types for Stripe.
+- [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard): A Swift package with foundational types for Stripe.
 
 ### Used By
 
-- [swift-stripe](https://github.com/coenttb/swift-stripe): The Swift library for the Stripe API.
+- [swift-stripe](https://github.com/swift-foundations/swift-stripe): The Swift library for the Stripe API.
 
 ### Third-Party Dependencies
 
@@ -311,4 +311,4 @@ For commercial licensing options, please contact the maintainer.
 
 ## Contributing
 
-Contributions are welcome. Please open an issue or pull request on [GitHub](https://github.com/coenttb/swift-stripe-live).
+Contributions are welcome. Please open an issue or pull request on [GitHub](https://github.com/swift-foundations/swift-stripe-http).

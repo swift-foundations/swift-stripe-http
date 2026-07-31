@@ -94,123 +94,123 @@ extension Target.Dependency {
 }
 
 extension Target.Dependency {
-    static var stripeTypes: Self { .product(name: "Stripe Types", package: "swift-stripe-types") }
+    static var stripeTypes: Self { .product(name: "Stripe Types", package: "swift-stripe-standard") }
     static var stripeBalanceTypes: Self {
-        .product(name: "Stripe Balance Types", package: "swift-stripe-types")
+        .product(name: "Stripe Balance Types", package: "swift-stripe-standard")
     }
     static var stripeBalanceTransactionsTypes: Self {
-        .product(name: "Stripe Balance Transactions Types", package: "swift-stripe-types")
+        .product(name: "Stripe Balance Transactions Types", package: "swift-stripe-standard")
     }
     static var stripeChargesTypes: Self {
-        .product(name: "Stripe Charges Types", package: "swift-stripe-types")
+        .product(name: "Stripe Charges Types", package: "swift-stripe-standard")
     }
     static var stripeCustomersTypes: Self {
-        .product(name: "Stripe Customers Types", package: "swift-stripe-types")
+        .product(name: "Stripe Customers Types", package: "swift-stripe-standard")
     }
     static var stripeCustomerSessionTypes: Self {
-        .product(name: "Stripe Customer Session Types", package: "swift-stripe-types")
+        .product(name: "Stripe Customer Session Types", package: "swift-stripe-standard")
     }
     static var stripeDisputesTypes: Self {
-        .product(name: "Stripe Disputes Types", package: "swift-stripe-types")
+        .product(name: "Stripe Disputes Types", package: "swift-stripe-standard")
     }
     static var stripeEventsTypes: Self {
-        .product(name: "Stripe Events Types", package: "swift-stripe-types")
+        .product(name: "Stripe Events Types", package: "swift-stripe-standard")
     }
     static var stripeEventDestinationsTypes: Self {
-        .product(name: "Stripe Event Destinations Types", package: "swift-stripe-types")
+        .product(name: "Stripe Event Destinations Types", package: "swift-stripe-standard")
     }
     static var stripeFilesTypes: Self {
-        .product(name: "Stripe Files Types", package: "swift-stripe-types")
+        .product(name: "Stripe Files Types", package: "swift-stripe-standard")
     }
     static var stripeFileLinksTypes: Self {
-        .product(name: "Stripe File Links Types", package: "swift-stripe-types")
+        .product(name: "Stripe File Links Types", package: "swift-stripe-standard")
     }
     static var stripeMandatesTypes: Self {
-        .product(name: "Stripe Mandates Types", package: "swift-stripe-types")
+        .product(name: "Stripe Mandates Types", package: "swift-stripe-standard")
     }
     static var stripePaymentIntentsTypes: Self {
-        .product(name: "Stripe Payment Intents Types", package: "swift-stripe-types")
+        .product(name: "Stripe Payment Intents Types", package: "swift-stripe-standard")
     }
     static var stripeSetupIntentsTypes: Self {
-        .product(name: "Stripe Setup Intents Types", package: "swift-stripe-types")
+        .product(name: "Stripe Setup Intents Types", package: "swift-stripe-standard")
     }
     static var stripeSetupAttemptsTypes: Self {
-        .product(name: "Stripe Setup Attempts Types", package: "swift-stripe-types")
+        .product(name: "Stripe Setup Attempts Types", package: "swift-stripe-standard")
     }
     static var stripePayoutsTypes: Self {
-        .product(name: "Stripe Payouts Types", package: "swift-stripe-types")
+        .product(name: "Stripe Payouts Types", package: "swift-stripe-standard")
     }
     static var stripeRefundsTypes: Self {
-        .product(name: "Stripe Refunds Types", package: "swift-stripe-types")
+        .product(name: "Stripe Refunds Types", package: "swift-stripe-standard")
     }
     static var stripeConfirmationTokenTypes: Self {
-        .product(name: "Stripe Confirmation Token Types", package: "swift-stripe-types")
+        .product(name: "Stripe Confirmation Token Types", package: "swift-stripe-standard")
     }
     static var stripeTokensTypes: Self {
-        .product(name: "Stripe Tokens Types", package: "swift-stripe-types")
+        .product(name: "Stripe Tokens Types", package: "swift-stripe-standard")
     }
     static var stripePaymentMethodsTypes: Self {
-        .product(name: "Stripe Payment Methods Types", package: "swift-stripe-types")
+        .product(name: "Stripe Payment Methods Types", package: "swift-stripe-standard")
     }
     static var stripeProductsTypes: Self {
-        .product(name: "Stripe Products Types", package: "swift-stripe-types")
+        .product(name: "Stripe Products Types", package: "swift-stripe-standard")
     }
     static var stripeCheckoutTypes: Self {
-        .product(name: "Stripe Checkout Types", package: "swift-stripe-types")
+        .product(name: "Stripe Checkout Types", package: "swift-stripe-standard")
     }
     static var stripePaymentLinkTypes: Self {
-        .product(name: "Stripe Payment Link Types", package: "swift-stripe-types")
+        .product(name: "Stripe Payment Link Types", package: "swift-stripe-standard")
     }
     static var stripeBillingTypes: Self {
-        .product(name: "Stripe Billing Types", package: "swift-stripe-types")
+        .product(name: "Stripe Billing Types", package: "swift-stripe-standard")
     }
     static var stripeCapitalTypes: Self {
-        .product(name: "Stripe Capital Types", package: "swift-stripe-types")
+        .product(name: "Stripe Capital Types", package: "swift-stripe-standard")
     }
     static var stripeConnectTypes: Self {
-        .product(name: "Stripe Connect Types", package: "swift-stripe-types")
+        .product(name: "Stripe Connect Types", package: "swift-stripe-standard")
     }
     static var stripeFraudTypes: Self {
-        .product(name: "Stripe Fraud Types", package: "swift-stripe-types")
+        .product(name: "Stripe Fraud Types", package: "swift-stripe-standard")
     }
     static var stripeIssuingTypes: Self {
-        .product(name: "Stripe Issuing Types", package: "swift-stripe-types")
+        .product(name: "Stripe Issuing Types", package: "swift-stripe-standard")
     }
     static var stripeTerminalTypes: Self {
-        .product(name: "Stripe Terminal Types", package: "swift-stripe-types")
+        .product(name: "Stripe Terminal Types", package: "swift-stripe-standard")
     }
     static var stripeTreasuryTypes: Self {
-        .product(name: "Stripe Treasury Types", package: "swift-stripe-types")
+        .product(name: "Stripe Treasury Types", package: "swift-stripe-standard")
     }
     static var stripeEntitlementsTypes: Self {
-        .product(name: "Stripe Entitlements Types", package: "swift-stripe-types")
+        .product(name: "Stripe Entitlements Types", package: "swift-stripe-standard")
     }
     static var stripeSigmaTypes: Self {
-        .product(name: "Stripe Sigma Types", package: "swift-stripe-types")
+        .product(name: "Stripe Sigma Types", package: "swift-stripe-standard")
     }
     static var stripeReportingTypes: Self {
-        .product(name: "Stripe Reporting Types", package: "swift-stripe-types")
+        .product(name: "Stripe Reporting Types", package: "swift-stripe-standard")
     }
     static var stripeFinancialConnectionsTypes: Self {
-        .product(name: "Stripe Financial Connections Types", package: "swift-stripe-types")
+        .product(name: "Stripe Financial Connections Types", package: "swift-stripe-standard")
     }
     static var stripeTaxTypes: Self {
-        .product(name: "Stripe Tax Types", package: "swift-stripe-types")
+        .product(name: "Stripe Tax Types", package: "swift-stripe-standard")
     }
     static var stripeIdentityTypes: Self {
-        .product(name: "Stripe Identity Types", package: "swift-stripe-types")
+        .product(name: "Stripe Identity Types", package: "swift-stripe-standard")
     }
     static var stripeCryptoTypes: Self {
-        .product(name: "Stripe Crypto Types", package: "swift-stripe-types")
+        .product(name: "Stripe Crypto Types", package: "swift-stripe-standard")
     }
     static var stripeClimateTypes: Self {
-        .product(name: "Stripe Climate Types", package: "swift-stripe-types")
+        .product(name: "Stripe Climate Types", package: "swift-stripe-standard")
     }
     static var stripeForwardingTypes: Self {
-        .product(name: "Stripe Forwarding Types", package: "swift-stripe-types")
+        .product(name: "Stripe Forwarding Types", package: "swift-stripe-standard")
     }
     static var stripeWebhooksTypes: Self {
-        .product(name: "Stripe Webhooks Types", package: "swift-stripe-types")
+        .product(name: "Stripe Webhooks Types", package: "swift-stripe-standard")
     }
 }
 
@@ -242,7 +242,7 @@ extension Target.Dependency {
 }
 
 let package = Package(
-    name: "swift-stripe-live",
+    name: "swift-stripe-http",
     platforms: [
         .macOS(.v26),
         .iOS(.v26),
@@ -296,7 +296,7 @@ let package = Package(
         .package(url: "https://github.com/swift-foundations/swift-emailaddress.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-environment-dependencies.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-throttling-dependencies.git", branch: "main"),
-        .package(url: "https://github.com/swift-standards/swift-stripe-types.git", branch: "main"),
+        .package(url: "https://github.com/swift-standards/swift-stripe-standard.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-dependencies.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-clocks-dependencies.git", branch: "main"),
     ],
@@ -312,8 +312,8 @@ let package = Package(
         //   Stripe Products Shipping Rates Live
         //
         // They are NOT implementations awaiting wiring. Each imports a Types
-        // module that exists nowhere in swift-stripe-types — no product, no
-        // target, no directory. swift-stripe-types shipped one module per API
+        // module that exists nowhere in swift-stripe-standard — no product, no
+        // target, no directory. swift-stripe-standard shipped one module per API
         // AREA (Products, Sigma, Tax); these were written against one per
         // RESOURCE (Products Coupons, Sigma Scheduled Queries, Tax Calculations,
         // …) that was never built. Wiring them means building seven missing
