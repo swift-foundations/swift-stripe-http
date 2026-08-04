@@ -27,7 +27,7 @@ Live HTTP client implementations for Stripe's REST API in Swift server applicati
 
 ## Overview
 
-`swift-stripe-live` provides HTTP client implementations for Stripe's REST API, built on async/await with dependency injection for testability. This package implements the client protocols defined in [swift-stripe-types](https://github.com/coenttb/swift-stripe-types) to make actual network requests to Stripe's servers.
+`swift-stripe-live` provides HTTP client implementations for Stripe's REST API, built on async/await with dependency injection for testability. This package implements the client protocols defined in [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard) to make actual network requests to Stripe's servers.
 
 ## Features
 
@@ -35,7 +35,7 @@ Live HTTP client implementations for Stripe's REST API in Swift server applicati
 - **Dependency injection**: Built with swift-dependencies for testability
 - **Authentication handling**: Automatic API key management and request signing
 - **Comprehensive coverage**: 48+ modules covering core payments, billing, subscriptions, Connect, Issuing, Terminal, and more
-- **Type-safe clients**: Implements protocols from swift-stripe-types for compile-time safety
+- **Type-safe clients**: Implements protocols from swift-stripe-standard for compile-time safety
 - **Production tested**: Powers live Stripe integrations in production applications
 
 ## Installation
@@ -273,7 +273,7 @@ struct CustomerTests {
 
 ## Dependencies
 
-- [swift-stripe-types](https://github.com/coenttb/swift-stripe-types): Core type definitions and client protocols
+- [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard): Core type definitions and client protocols
 - [swift-server-foundation](https://github.com/coenttb/swift-server-foundation): Server utilities and HTTP handling
 - [swift-dependencies](https://github.com/pointfreeco/swift-dependencies): Dependency injection framework
 - [swift-authenticating](https://github.com/coenttb/swift-authenticating): Authentication utilities
@@ -286,7 +286,7 @@ struct CustomerTests {
 - [swift-authenticating](https://github.com/coenttb/swift-authenticating): A Swift package for type-safe HTTP authentication with URL routing integration.
 - [swift-environment-variables](https://github.com/coenttb/swift-environment-variables): A Swift package for type-safe environment variable management.
 - [swift-server-foundation](https://github.com/coenttb/swift-server-foundation): A Swift package with tools to simplify server development.
-- [swift-stripe-types](https://github.com/coenttb/swift-stripe-types): A Swift package with foundational types for Stripe.
+- [swift-stripe-standard](https://github.com/swift-standards/swift-stripe-standard): A Swift package with foundational types for Stripe.
 
 ### Used By
 

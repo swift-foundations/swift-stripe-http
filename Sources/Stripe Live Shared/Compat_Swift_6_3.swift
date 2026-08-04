@@ -6,7 +6,7 @@
 //  │  6.3.x-COMPAT PATH — §A9-CLASS — RETIRES-OR-REDISPOSES AT THE 6.4 FLIP.    │
 //  └───────────────────────────────────────────────────────────────────────────┘
 //
-//  The live half of the §A9 avoidance path. swift-stripe-types vends create-only
+//  The live half of the §A9 avoidance path. swift-stripe-standard vends create-only
 //  routers (`<API>.Router.Compat_Swift_6_3`) that omit the `{id}` path parsers whose
 //  `Tagged`-closing witness tables SIGSEGV on Swift 6.3.x; this file supplies the
 //  base request data (base URL + auth/protocol headers) those routers print into,
